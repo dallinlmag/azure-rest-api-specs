@@ -6142,7 +6142,7 @@
             "modelAsString": true
           },
           "type": "string",
-          "description": "Action to be taken upon a user disconnect during the peak period."
+          "description": "Action to be taken after a user disconnect during the peak period."
         },
         "peakMinutesToWaitOnDisconnect": {
           "type": "integer",
@@ -6161,7 +6161,7 @@
             "modelAsString": true
           },
           "type": "string",
-          "description": "Action to be taken upon Logoff during the peak period."
+          "description": "Action to be taken after a logoff during the peak period."
         },
         "peakMinutesToWaitOnLogoff": {
           "type": "integer",
@@ -6172,6 +6172,19 @@
         "rampDownStartTime": {
           "$ref": "#/definitions/Time",
           "description": "Starting time for ramp down period."
+        },
+        "rampDownActionOnDisconnect": {
+          "enum": [
+            "None",
+            "Deallocate",
+            "Hibernate"
+          ],
+          "x-ms-enum": {
+            "name": "SessionHandlingOperation",
+            "modelAsString": true
+          },
+          "type": "string",
+          "description": "Action to be taken after a user disconnect during the ramp down period."
         },
         "rampDownMinutesToWaitOnDisconnect": {
           "type": "integer",
@@ -6190,7 +6203,7 @@
             "modelAsString": true
           },
           "type": "string",
-          "description": "Action to be taken upon Logoff during the ramp down period."
+          "description": "Action to be taken after a logoff during the ramp down period."
         },
         "rampDownMinutesToWaitOnLogoff": {
           "type": "integer",
@@ -6213,7 +6226,7 @@
             "modelAsString": true
           },
           "type": "string",
-          "description": "Action to be taken upon a user disconnect during the off-peak period."
+          "description": "Action to be taken after a user disconnect during the off-peak period."
         },
         "offPeakMinutesToWaitOnDisconnect": {
           "type": "integer",
@@ -6232,7 +6245,7 @@
             "modelAsString": true
           },
           "type": "string",
-          "description": "Action to be taken upon Logoff during the off-peak period."
+          "description": "Action to be taken after a logoff during the off-peak period."
         },
         "offPeakMinutesToWaitOnLogoff": {
           "type": "integer",
